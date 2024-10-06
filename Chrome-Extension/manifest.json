@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "H&M Price Fetcher",
+    "version": "1.0",
+    "description": "Fetches product price and image from H&M product pages.",
+    "permissions": ["activeTab", "scripting", "tabs", "storage","background"],
+    "host_permissions": ["https://www2.hm.com/*"],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icon16.png",
+            "48": "icon48.png",
+            "128": "icon128.png"
+        }
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://www2.hm.com/*"],
+            "js": ["contentScript.js"]
+        }
+    ],
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    }
+}
